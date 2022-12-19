@@ -17,7 +17,7 @@
 .paragraph {
   display: grid;
   grid-area: paragraph;
-  margin-left: 6rem;
+  margin-left: 2rem;
   color: aliceblue;
   align-items: center;
 }
@@ -25,7 +25,7 @@
 .icon-links {
   display: grid;
   grid-area: icons;
-  margin-right: 6rem;
+  margin-right: 2rem;
   grid-auto-flow: column;
   place-content: space-around;
   align-items: center;
@@ -33,4 +33,24 @@
 
 .icon-links > * {
   margin: 0.4rem;
+}
+
+@media screen and (max-width: 450px) {
+  .footer {
+    text-align: center;
+    grid-template-areas:
+      ' icons'
+      'paragraph';
+    grid-template-columns: 1fr;
+  }
+
+  .icon-links {
+    place-content: space-between;
+    margin-right: 0;
+  }
+
+  .paragraph {
+    margin-left: 0rem;
+    font-size: 0.8rem;
+  }
 }

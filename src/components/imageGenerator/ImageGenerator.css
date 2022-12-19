@@ -7,7 +7,7 @@
 .form-components-wrapper {
   display: grid;
   grid-template-areas: ' radio prompt submit';
-  grid-template-columns: 20rem 1fr 10rem;
+  grid-template-columns: 16rem 1fr 10rem;
   margin: 1rem;
   padding: 0.4rem;
   border: 1px solid blue;
@@ -32,22 +32,75 @@
 .submit-button {
   display: grid;
   grid-area: submit;
+  width: 9rem;
 }
 
-ul {
+.unordered-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   grid-gap: 1rem;
+  padding-bottom: 8rem;
 }
 
-li {
+.list-item {
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-img {
+.image {
   width: 240px;
   height: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .form-components-wrapper {
+    grid-template-areas:
+      ' radio .  submit .'
+      'prompt prompt prompt prompt';
+  }
+
+  .form-prompt {
+    padding-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .submit-button {
+    width: 6rem;
+  }
+
+  .form-prompt {
+    padding-right: 4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .submit-button {
+    width: 4rem;
+  }
+
+  .form-prompt {
+    padding-right: 6rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .form-components-wrapper {
+    grid-template-areas:
+      ' radio radio  radio '
+      ' submit submit submit '
+      ' prompt prompt prompt ';
+  }
+
+  .submit-button {
+    place-content: center;
+    width: 15rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .form-prompt {
+    padding-right: 11rem;
+  }
 }

@@ -10,3 +10,22 @@
   height: 6rem;
   z-index: 99;
 }
+
+.header-text {
+  font-size: 1.8rem;
+  color: aliceblue;
+}
+
+@media screen and (max-width: 700px) {
+  .header-text {
+    font-size: 1.4rem;
+    color: aliceblue;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-text {
+    text-align: center;
+    font-size: 1rem;
+  }
+}

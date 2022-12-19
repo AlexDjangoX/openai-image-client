@@ -1,6 +1,7 @@
 .atom-wrapper {
   display: grid;
   place-content: center;
+  z-index: -999;
 }
 
 .atom-spinner,

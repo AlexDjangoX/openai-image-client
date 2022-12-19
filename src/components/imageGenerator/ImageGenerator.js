@@ -111,10 +111,11 @@ const ImageGenerator = () => {
           </FormControl>
           <FormControl className='form-prompt'>
             <Input
+              className='prompt-form-control-input'
               id='prompt'
               value={prompt}
               onChange={handleChangePrompt}
-              placeholder={'Describe image you want'}
+              placeholder={'Describe sought images.....'}
             />
           </FormControl>
 
@@ -131,10 +132,15 @@ const ImageGenerator = () => {
           <Atom size='200' color='#54a8f1' animationDuration='700' />
         )}
 
-        <ul>
+        <ul className='unordered-list'>
           {imagesArray.map((image) => (
-            <li key={image.id}>
-              <img src={image.url} alt={image.alt} key={uuidv4()} />
+            <li className='list-item' key={image.id}>
+              <img
+                className='image'
+                src={image.url}
+                alt={image.alt}
+                key={uuidv4()}
+              />
             </li>
           ))}
         </ul>

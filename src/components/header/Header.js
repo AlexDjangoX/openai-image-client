@@ -12,9 +12,7 @@ const Header = () => {
       className='header'
       alignItems={'center'}
     >
-      <Text fontSize='1.8rem' color='white' mr={4}>
-        Artificial Intelligence Image Generator
-      </Text>
+      <h1 className='header-text'>Artificial Intelligence Image Generator</h1>
       <Button
         target={'_blank'}
         as='a'
