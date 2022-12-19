@@ -1,0 +1,53 @@
+.image-generator-wrapper {
+  height: calc(100vh - 12rem);
+  margin-top: 7rem;
+  padding-bottom: 2rem;
+}
+
+.form-components-wrapper {
+  display: grid;
+  grid-template-areas: ' radio prompt submit';
+  grid-template-columns: 20rem 1fr 10rem;
+  margin: 1rem;
+  padding: 0.4rem;
+  border: 1px solid blue;
+  border-radius: 4px;
+  background-color: rgba(9, 84, 155, 0.303);
+
+  position: sticky;
+}
+
+.radio-buttons {
+  display: grid;
+  grid-area: radio;
+  margin-top: 0.4rem;
+}
+
+.form-prompt {
+  display: grid;
+  grid-area: prompt;
+  padding-right: 4rem;
+}
+
+.submit-button {
+  display: grid;
+  grid-area: submit;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 1rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+img {
+  width: 240px;
+  height: auto;
+}

@@ -1,0 +1,33 @@
+.footer {
+  display: grid;
+  grid-template-areas: 'paragraph icons';
+  grid-template-columns: 1fr 12rem;
+  background: linear-gradient(
+    90deg,
+    rgba(40, 103, 249) 0%,
+    rgb(25, 33, 57) 60%
+  );
+  position: sticky;
+  height: 6rem;
+}
+
+.paragraph {
+  display: grid;
+  grid-area: paragraph;
+  margin-left: 6rem;
+  color: aliceblue;
+  align-items: center;
+}
+
+.icon-links {
+  display: grid;
+  grid-area: icons;
+  margin-right: 6rem;
+  grid-auto-flow: column;
+  place-content: space-around;
+  align-items: center;
+}
+
+.icon-links > * {
+  margin: 0.4rem;
+}
