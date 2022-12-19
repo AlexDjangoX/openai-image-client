@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Atom from '../spinner/Atom.js';
 import {
   FormControl,
-  FormLabel,
   Input,
-  FormHelperText,
   Radio,
   RadioGroup,
   Button,
@@ -16,13 +15,14 @@ const ImageGenerator = () => {
   const [prompt, setPrompt] = useState('');
   const [size, setSize] = useState('small');
   const [imagesArray, setImagesArray] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const generateImageRequest = async (prompt, size) => {
     console.log('Inside generateImageRequest');
     console.log('SIZE : ', size);
     console.log('PROMPT : ', prompt);
     try {
-      //   showSpinner();
+      setIsLoading(true);
 
       const response = await fetch(
         `${process.env.REACT_APP_BASE_URL}/openai/generateimage`,
@@ -39,7 +39,6 @@ const ImageGenerator = () => {
       );
 
       if (!response.ok) {
-        // removeSpinner();
         throw new Error('That image could not be generated');
       }
 
@@ -50,7 +49,7 @@ const ImageGenerator = () => {
       setImagesArray(imageUrlData);
       console.log(imageUrlData);
 
-      //   removeSpinner();
+      setIsLoading(false);
     } catch (error) {
       console.error('Failed to fetch');
     }
@@ -127,6 +126,10 @@ const ImageGenerator = () => {
             Submit
           </Button>
         </Box>
+
+        {isLoading && (
+          <Atom size='200' color='#54a8f1' animationDuration='700' />
+        )}
 
         <ul>
           {imagesArray.map((image) => (
