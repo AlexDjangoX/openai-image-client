@@ -25,7 +25,7 @@ const ImageGenerator = () => {
       //   showSpinner();
 
       const response = await fetch(
-        'http://localhost:5001/openai/generateimage',
+        `${process.env.REACT_APP_BASE_URL}/openai/generateimage`,
         {
           method: 'POST',
           headers: {
