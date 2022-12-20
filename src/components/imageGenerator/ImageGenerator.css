@@ -1,5 +1,4 @@
 .image-generator-wrapper {
-  height: auto;
   margin-top: 7rem;
   padding-bottom: 2rem;
 }
@@ -52,55 +51,51 @@
 .image {
   width: 240px;
   height: auto;
+  transition: transform 2s, box-shadow 2s;
+}
+
+img:hover {
+  transform: scale(1.15) rotate(2deg);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.788);
 }
 
 @media screen and (max-width: 900px) {
   .form-components-wrapper {
     grid-template-areas:
-      ' radio .  submit .'
-      'prompt prompt prompt prompt';
+      ' . radio   . '
+      ' . submit . '
+      ' prompt prompt prompt ';
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .form-prompt {
-    padding-right: 1rem;
+    padding-right: 0rem;
+  }
+
+  .submit-button {
+    width: 20rem;
+    margin-bottom: 0.6rem;
   }
 }
 
-@media screen and (max-width: 450px) {
-  .submit-button {
-    width: 6rem;
-  }
-
-  .form-prompt {
-    padding-right: 4rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .submit-button {
-    width: 4rem;
-  }
-
-  .form-prompt {
-    padding-right: 6rem;
+@media screen and (max-width: 752px) {
+  .image {
+    width: 320px;
   }
 }
 
 @media screen and (max-width: 380px) {
   .form-components-wrapper {
     grid-template-areas:
-      ' radio radio  radio '
-      ' submit submit submit '
+      ' radio radio   radio '
+      ' . submit . '
       ' prompt prompt prompt ';
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .submit-button {
     place-content: center;
-    width: 15rem;
+    width: 12rem;
     margin-bottom: 0.6rem;
-  }
-
-  .form-prompt {
-    padding-right: 11rem;
   }
 }

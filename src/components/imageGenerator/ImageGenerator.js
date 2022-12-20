@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Atom from '../spinner/Atom.js';
+import { useClipboard } from '../../utils/useClipboard.js';
 import {
   FormControl,
   Input,
@@ -16,6 +17,8 @@ const ImageGenerator = () => {
   const [size, setSize] = useState('small');
   const [imagesArray, setImagesArray] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const { ref, onClick } = useClipboard();
 
   const generateImageRequest = async (prompt, size) => {
     console.log('Inside generateImageRequest');
@@ -136,6 +139,8 @@ const ImageGenerator = () => {
           {imagesArray.map((image) => (
             <li className='list-item' key={image.id}>
               <img
+                ref={ref}
+                onClick={onClick}
                 className='image'
                 src={image.url}
                 alt={image.alt}
